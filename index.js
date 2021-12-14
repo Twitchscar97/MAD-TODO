@@ -47,8 +47,8 @@ if(allTodos){
 
 //Fetch category todos
 app.get('/todos/:category',async (req, res)=>{
-    const {category} = req.params
-    const allCategoryTodos = await todoModel.find({}).where({category}).equals({category});
+    const {category} = req.params;
+    const allCategoryTodos = await todoModel.find({}).where("category").equals(category);
     if(allCategoryTodos){
         //success
         res.status(200).json({
@@ -82,9 +82,9 @@ app.get('/todos/:category',async (req, res)=>{
             }
     })
     //how to delete a todo
-    app.delete('',async(req, res)=>{
-        const todoId = req.params;
-        const deletedtodo = await todoModel.findByIdAndDelete({id});
+    app.delete('/todo/:id',async(req, res)=>{
+        const {id}= req.params;
+        const deletedtodo = await todoModel.findByIdAndDelete(id);
     //when delete is successful
     if (deletedtodo){
 

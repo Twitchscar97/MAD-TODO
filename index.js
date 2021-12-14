@@ -116,6 +116,6 @@ app.get('/todos/:category',async (req, res)=>{
 
 
 
-app.listen(Port, () => {
-console.log(`Your app is listening on ${Port}`);
+app.listen(PORT, () => {
+console.log(`Your app is listening on ${PORT}`);
 })

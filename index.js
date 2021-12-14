@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 //this sections tells us that if the port 3000 is busy  it should take an alternative which is free
-const Port = 3000 || process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 //we used this code because we are trying to makae our database string secure ie to be exclusively visible to the user only 
 const db = process.env.DB_URL;

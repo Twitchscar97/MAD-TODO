@@ -3,8 +3,12 @@ import express from 'express';
 import todoModel from './Schema/schema.js';
 import cors from 'cors';
 import  mongoose from 'mongoose';  
+
 const app = express();
+
 dotenv.config();
+
+//Middlewares
 app.use(cors());
 app.use(express.json());
 
